@@ -1,0 +1,647 @@
+/* Container styling */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    /* max-height: 100vh;
+    overflow-y: auto; */ 
+}
+/* ================================================================== */
+/* Left menu styling */
+.left-menu {
+    flex: 1;
+    border: 2px solid rgb(220, 220, 220);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: start;
+}
+
+/* Main Menu Label and Span */
+.menu-span {
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 22px;
+}
+.profile-option, .contact-option, .about-option{
+    cursor: pointer;
+}
+.menu-span:hover {
+    background-color: #cfcfcf; 
+    transform: translateY(-2px);
+}
+
+/* Hide dropdown menu by default */
+.slides {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    width: 100%;
+}
+
+/* Show dropdown menu when checkbox is checked */
+#touchs:checked ~ .slides {
+    max-height: 200px; 
+}
+
+/* Dropdown list items */
+.slides li {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Hover effect for list items */
+.slides li:hover {
+    background-color: #e2e7eb;
+}
+
+/* Checkbox input styling */
+.checkbox {
+    display: none; /* Hide checkbox itself */
+}
+
+/* ======================================================================== */
+
+/* Style for the project dropdown label */
+
+.project-span {
+    /* background-color: #023c76;  */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 22px;
+}
+.project-span:hover{
+    background-color: #bababa; 
+    transform: translateY(-2px);
+}
+
+/* Style for the dropdown list */
+/* ======================================================== */
+.slide {
+    clear: both;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease;
+    list-style: none;
+    padding: 0;
+    max-height: 65vh;
+    overflow-y: auto;
+}
+/* Hide the checkbox visually but keep it functional */
+#touch {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+}
+
+/* Trigger dropdown expansion when checkbox is checked */
+#touch:checked ~ .slide {
+    height: 65vh;
+}
+
+/* ======================================================== */
+.li-project-div {
+    background-color: #f4f4f4; 
+    padding: 15px 20px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    transition: all 0.3s ease; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.li-project-div:hover {
+    background-color: #d2d2d2; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    transform: translateY(-2px); 
+}
+
+.li-project-div a {
+    color: #02172c;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+.li-project-div a:hover {
+    color: rgb(87, 87, 87);
+}
+.slide li {
+    padding: 5px;
+}
+
+/* Buttons styling */
+.delete-btn, .edit-btn {
+    /* margin-right: 3px; */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8em;
+    transition: ease 200ms;
+    width: 100%;
+    padding: 3px 7px;
+    margin-bottom: 3px;
+}
+.btn-control{
+    display: flex;
+    flex-direction: column;
+}
+.delete-btn{
+    background-color: #cc3636;
+}
+.delete-btn:hover {
+    background-color: #ad2f2f;
+}
+
+.edit-btn{
+    background-color: #3681cc;
+}
+
+
+.edit-btn:hover {
+    background-color: #2f6dac;
+}
+
+
+/* add new project button */
+.add-new-project-button{
+    background-color: #3681cc;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease 200ms;
+    width: 100%;
+    margin: 10px 0px;
+}
+.add-new-project-button:hover{
+    background-color: #2e6dad;
+    transform: translateY(-2px);
+}
+/* add new project and edit project form */
+.popup-overlay-edit{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out; 
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: slideUp 0.4s ease-out;
+}
+
+.popup-content h3 {
+    margin-bottom: 20px;
+}
+
+.popup-content form input,
+.popup-content form textarea,
+.popup-content form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-actions button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 48%;
+}
+
+.save-project-btn, .edit-project-btn {
+    background: #3681cc;
+    color: white;
+}
+
+.cancel-project-btn {
+    background: #f44336;
+    color: white;
+}
+
+/* ================================================================== */
+
+/* Right segment styling */
+.right-segment {
+    flex: 8;
+    border-top: 2px solid #ececec;
+    display: flex;
+    flex-direction: column;
+}
+.project-info-segment {
+    padding: 20px;
+    flex: 1;
+    background-color: #f4f9fe;
+  }
+  .p-projects{
+    font-size: 1.7rem;
+  }
+
+  .progress-container{
+    border: 1px solid #f4f9fe;
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+  }
+  /* Header styling */
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* Calendar styling */
+.calender-button {
+    background-color: #023c76; 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.calender-button:hover {
+    background-color: #005b99; 
+    transform: translateY(-2px);
+}
+
+/* Popup Overlay */
+.popup-overlay-calendar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Smooth fade-in effect */
+    animation: fadeIn 0.3s ease-in-out; 
+}
+
+/* Popup Content */
+.popup-content-calendar {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    animation: slideUp 0.4s ease-out;
+}
+
+/* Calendar dates Styling */
+.react-calendar {
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__tile {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.react-calendar__tile:hover {
+    background-color: #afafaf !important; 
+    color: white;
+    transform: scale(1.05); 
+}
+
+
+.react-calendar__tile.due {
+   position: relative;
+}
+
+.react-calendar__tile.due::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #ff7f7f;
+    border: 2px solid #fff;
+}
+
+
+.tasks-for-selected-date {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto; 
+}
+
+.tasks-for-selected-date h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+.tasks-for-selected-date ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.tasks-for-selected-date li {
+    margin-bottom: 12px;
+    padding: 15px;
+    background-color: #fff;
+    border-left: 4px solid #3681cc;  
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tasks-for-selected-date li:hover {
+    background-color: #f1f5f9; 
+    transform: translateY(-2px);
+}
+
+.tasks-for-selected-date li strong {
+    font-size: 15px;
+    color: #022d59;  
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.tasks-for-selected-date li p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.tasks-for-selected-date li .task-due {
+    font-size: 12px;
+    color: #999;
+    margin-top: 8px;
+    text-align: right;  
+}
+
+
+/* Popup Close Button */
+.close-calendar-button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f44336;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.close-calendar-button:hover {
+    background-color: #be3333;
+}
+
+/* animation functions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+/*  */
+.progress-controls {
+    display: flex;
+    gap: 10px;
+}
+.search-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.add-new-task-button {
+    background-color: #3681cc;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease 200ms;
+}
+.add-new-task-button:hover{
+    background-color: #2e6dad;
+    transform: translateY(-2px);
+}
+/* Column styling */
+.progress-columns {
+    display: flex;
+    flex: 1;
+    margin-top: 10px;
+    gap: 10px;
+}
+.progress-column {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.progress-column h3 {
+    text-align: center;
+    color: #023c76;
+}
+
+.progress-column::-webkit-scrollbar-track {
+    background: #c0bdbd;
+    border-radius: 10px;
+}
+
+/* Specific colors for each column */
+.to-do {
+    background-color: #fff6e0; 
+}
+
+.in-progress {
+    background-color: #e0f3ff; 
+}
+
+.completed {
+    background-color: #e5ffe0; 
+}
+
+/* adding task form */
+.popup-overlay-task {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out; 
+}
+.popup-content-task{
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    max-width: 90%;
+    animation: slideUp 0.4s ease-out;
+}
+
+/* Dropdown Style */
+.project-dropdown,
+.status-dropdown {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.project-dropdown:focus,
+.status-dropdown:focus {
+    outline: 1px solid #3681cc;
+}
+
+.task-form input,
+.project-dropdown,
+.status-dropdown {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    /* box-sizing: border-box; */
+}
+/* Buttons section */
+.popup-actions-task {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.popup-actions-task button{
+     padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* Save Button */
+.task-save-btn {
+    background-color: #3681cc;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    padding: 12px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 48%;
+}
+.task-save-btn:hover {
+    background-color: #2f6dac;
+}
+/* Cancel Button */
+.task-cancel-btn {
+    background-color: #f44336;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 48%;
+}
+
+.task-cancel-btn:hover {
+    background-color: #be3333;
+}
+
+
+

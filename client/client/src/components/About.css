@@ -1,0 +1,76 @@
+.about-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+.full-about-container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    position: relative;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.532);
+}
+
+.h1-div {
+    position: absolute;
+    top: 0%;
+    right: 10%;
+    font-size: 10vw; /* Responsive font size */
+    font-family: 'Poppins', sans-serif; /* Modern, stylish font */
+    color: rgba(0, 0, 0, 0.8); /* Semi-bold color for emphasis */
+    /* transform: rotate(-5deg); Artistic tilt */
+    z-index: 10;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    user-select: none; /* Unselectable for aesthetics */
+}
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 20px;
+    position: relative;
+}
+
+.me-img-class{
+    width: 35vw;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+.p-info {
+    width: 50%;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .h1-div {
+        font-size: 5vw; 
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        font-size: 10vw; 
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .me-img-class {
+        width: 50%;
+    }
+
+    .p-info {
+        width: 90%;
+        font-size: 1rem;
+    }
+}

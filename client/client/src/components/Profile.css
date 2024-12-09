@@ -1,0 +1,89 @@
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    font-family: Arial, sans-serif; 
+}
+
+.user-pic-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px; 
+}
+
+.user-img {
+    width: 200px;
+    height: 200px; 
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-bottom: 20px; 
+}
+
+.user-name-div {
+    font-size: 24px; 
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.user-job {
+    font-size: 18px; 
+    color: #888;
+}
+
+.user-info-right {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-left: 2px solid #ddd; 
+}
+
+.user-contact-info,
+.user-projects {
+    margin-bottom: 30px; 
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+.contact-container-profile,
+.user-projects-container {
+    display: flex;
+    flex-direction: column; 
+    margin-top: 10px;
+    background-color: #fff; /* White background to match header */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    animation: slideUp 1s ease-out; /* function is in Contact.css */
+}
+
+.user-email-info,
+.user-phone-info,
+.recent-project,
+.most-viewed {
+    font-size: 16px; 
+    margin: 5px 0;
+}
+
+.user-email-info::before,
+.user-phone-info::before {
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+.recent-project:hover,
+.most-viewed:hover {
+    text-decoration: underline; 
+}

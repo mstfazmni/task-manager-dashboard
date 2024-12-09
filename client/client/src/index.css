@@ -1,0 +1,7 @@
+.app-class{
+    background-color: rgb(255, 255, 255);
+    height: 100vh;           /* Set height to viewport height */
+    overflow: hidden;        /* Prevent scrolling */
+    display: flex;           /* Optional: for centering content */
+    flex-direction: column;
+}

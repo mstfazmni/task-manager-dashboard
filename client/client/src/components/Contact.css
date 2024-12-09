@@ -1,0 +1,104 @@
+.contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: #fefefe;  */
+    padding: 30px 20px;
+    height: 100vh; /* Ensure full viewport height */
+    box-sizing: border-box;
+}
+
+.contact-container {
+    background-color: #fff; /* White background to match header */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.555);
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    animation: slideUp 1s ease-out;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 10px 0;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+}
+
+.my-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    border-radius: 12px;
+    background-color: #f9f9f9; /* Light gray background for info container */
+    padding: 40px;
+    width: 100%;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.my-info-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.my-info-container p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.my-info-container a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.my-info-container a:hover {
+    color: #0056b3;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .my-info-container {
+        padding: 30px;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

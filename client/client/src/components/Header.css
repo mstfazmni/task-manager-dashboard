@@ -1,0 +1,106 @@
+.header-div-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.right-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.user-icon{
+    width: 40px;
+    height: 40px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+/* to switch between png and gif logo by hovering ! */
+.user-icon:hover{
+    content: url('../asset/user.gif');
+    width: 50px;
+    height: 50px;
+    transform: scale(1.1);
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); 
+    max-width: 220px; 
+    font-family: 'Arial', sans-serif;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+  }
+  .user-info.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s 0s;
+  }
+
+  .user-name{
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 100%;
+    text-overflow: ellipsis; /* Truncate name if it's too long */
+    white-space: nowrap;
+    overflow: hidden;   
+  }
+  .user-email{
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+    padding: 8px 12px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .user-info p {
+    margin: 2px 0;
+  }
+  
+
+.logo-left img,
+.logo-right img {
+    height: 110px;
+    width: auto;
+    cursor: pointer;
+}
+
+.logout-btn-header{
+    background-color: #cc3636;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.logout-btn-header:hover {
+    background-color: #ad2f2f;
+}

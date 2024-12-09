@@ -1,0 +1,45 @@
+.login-full-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.form-login-container, .info-container{
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 50vh;
+    
+}
+.form-login-container{
+    transition: 500ms;
+    background-color: hwb(0 49% 48% / 0.081);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.info-container{
+    transition: 500ms;
+    background-color: hwb(0 49% 48% / 0.081);
+    border-radius: 10px;
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.info-container:hover, .form-login-container:hover{
+    box-shadow:  5px 5px 5px rgb(215, 215, 215);
+
+}
+
+.signup-link{
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgb(22, 112, 202);
+}
+
+.signup-link:hover{
+    color: rgb(95, 164, 233);
+}
