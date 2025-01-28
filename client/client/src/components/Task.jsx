@@ -36,7 +36,7 @@ const Task = ({title, assignedTo, dueDate, status, onDelete, taskId, task, onUpd
         event.preventDefault();
 
         try{
-            const res = await axios.put(`http://localhost:5000/api/tasks/${editTask._id}`, editTask);
+            const res = await axios.put(`https://task-management-backend-ky4v.onrender.com/api/tasks/${editTask._id}`, editTask);
             if (res.status === 200) {
                 alert('Task updated successfully');
                 toggleEditPopup();

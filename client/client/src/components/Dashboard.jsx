@@ -90,7 +90,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/projects');
+                const res = await axios.get('https://task-management-backend-ky4v.onrender.com/api/projects');
                 setProjects(res.data); // Save projects to state
             } catch (error) {
                 console.log("Error fetching projects:", error);
@@ -104,7 +104,7 @@ const Dashboard = () => {
         if(selectedProject){
         const fetchTasks = async () => {
             try {    
-                const res = await axios.get(`http://localhost:5000/api/tasks`);
+                const res = await axios.get(`https://task-management-backend-ky4v.onrender.com/api/tasks`);
                 setTasks(res.data);
             } catch (error) {
                 console.log("Error fetching tasks:", error);
@@ -141,7 +141,7 @@ const Dashboard = () => {
 
     const fetchTasksForProject = async (project) => {
         try {
-            const res = await axios.get(`http://localhost:5000/api/tasks/project/${project._id}`);
+            const res = await axios.get(`https://task-management-backend-ky4v.onrender.com/api/tasks/project/${project._id}`);
             setTasks(res.data); // Update tasks for the selected project
         } catch (error) {
             console.error("Error fetching tasks for project", error);
@@ -153,7 +153,7 @@ const Dashboard = () => {
         localStorage.setItem("selectedProject", project._id); // Save selected project ID to localStorage
 
         try{
-            const res = await axios.get(`http://localhost:5000/api/tasks/project/${project._id}`);
+            const res = await axios.get(`https://task-management-backend-ky4v.onrender.com/api/tasks/project/${project._id}`);
             setTasks(res.data);//update tasks to show only those related to selected project
         }catch (error){
             console.log("Error fetching tasks for project", error);
@@ -175,7 +175,7 @@ const Dashboard = () => {
         event.preventDefault();
         try {
             const taskWithProject = {...newTask, projectId: selectedProject};
-            const res = await axios.post(`http://localhost:5000/api/tasks`, taskWithProject);
+            const res = await axios.post(`https://task-management-backend-ky4v.onrender.com/api/tasks`, taskWithProject);
 
             setTasks((prevTasks) => [...prevTasks, res.data]); 
             setNewTask({ title: "", assignedTo: "", dueDate: "", status: "To Do" }); //reset
@@ -191,7 +191,7 @@ const Dashboard = () => {
     const handleDeleteProject = async (projectId) => {
         if(window.confirm("Are you sure you want to delete this project?")) {
         try{
-            const res = await axios.delete(`http://localhost:5000/api/projects/${projectId}`);
+            const res = await axios.delete(`https://task-management-backend-ky4v.onrender.com/api/projects/${projectId}`);
             alert(res.data.message);
             setProjects(projects.filter((project) => project._id !== projectId));
         } catch (error) {
@@ -206,7 +206,7 @@ const Dashboard = () => {
     const handleDeleteTask = async (taskId) => {
         if(window.confirm("Are you sure you want to delete this task?")) {
             try {
-                const res = await axios.delete(`http://localhost:5000/api/tasks/${taskId}`);
+                const res = await axios.delete(`https://task-management-backend-ky4v.onrender.com/api/tasks/${taskId}`);
                 alert(res.data.message); 
                 // Update the tasks state to remove the deleted task
                 setTasks(prevTasks => prevTasks.filter(task => task._id !== taskId)); 
@@ -236,7 +236,7 @@ const Dashboard = () => {
         event.preventDefault();
         
         try{
-            const res = await axios.post('http://localhost:5000/api/projects', newProject);
+            const res = await axios.post('https://task-management-backend-ky4v.onrender.com/api/projects', newProject);
             if (res.status === 201){
                 setProjects((prevProjects) => [...prevProjects, res.data]);
                 alert("Project added successfully.");
@@ -271,7 +271,7 @@ const Dashboard = () => {
         event.preventDefault();
 
         try{
-            const res = await axios.put(`http://localhost:5000/api/projects/${editProject._id}`, editProject);
+            const res = await axios.put(`https://task-management-backend-ky4v.onrender.com/api/projects/${editProject._id}`, editProject);
                 if(res.status === 200) {
                             alert('Project updated successfully');
                             toggleEditPopup();

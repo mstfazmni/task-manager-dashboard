@@ -16,7 +16,7 @@ const Login = ({ onFlip, onLoginSuccess }) => {
         const payload = { email, password };
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/login', {
+            const response = await fetch('https://task-management-backend-ky4v.onrender.com/api/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
