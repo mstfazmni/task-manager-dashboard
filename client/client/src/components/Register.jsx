@@ -31,7 +31,7 @@ const Register = ({onFlip, setRedirectToDashboard }) => {
         setPassword(event.target.value);
     }
     const handlePhoneChange = (event) => {
-        setPassword(event.target.value);
+        setPhone(event.target.value);
     }
 
     //handle form submission
