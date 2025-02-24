@@ -87,3 +87,59 @@ h2 {
 .most-viewed:hover {
     text-decoration: underline; 
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        height: auto; 
+    }
+
+    .user-pic-left {
+        margin-right: 0; 
+        margin-bottom: 20px; 
+    }
+
+    .user-name-div {
+        font-size: 20px;
+    }
+
+    .user-job {
+        font-size: 16px; 
+    }
+
+    h2 {
+        font-size: 20px; 
+    }
+
+    .contact-container-profile,
+    .user-projects-container {
+        padding: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .user-img {
+        width: 140px; 
+        height: 140px; 
+    }
+
+    .user-name-div {
+        font-size: 18px;
+    }
+
+    .user-job {
+        font-size: 14px; 
+    }
+
+    h2 {
+        font-size: 18px; 
+    }
+
+    .user-email-info,
+    .user-phone-info,
+    .recent-project,
+    .most-viewed {
+        font-size: 14px;
+    }
+}

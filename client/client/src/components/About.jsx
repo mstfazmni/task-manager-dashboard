@@ -3,10 +3,9 @@ import './About.css';
 import myPicture from '../asset/me-img.png';
 
 const About = () => {
-    return(
+    return (
         <div className="about-page">
             <div className="full-about-container">
-
                 <h1 className="h1-div">ABOUT ME</h1>
                 <div className="about-container">
                     <img src={myPicture} alt="me" className="me-img-class"/>
@@ -22,7 +21,7 @@ const About = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default About;
