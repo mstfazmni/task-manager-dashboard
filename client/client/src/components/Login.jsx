@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import './Login.css';
 
 const Login = ({ onFlip, onLoginSuccess }) => {
-    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState('');
 
     const handleEmailChange = (event) => setEmail(event.target.value);
     const handlePasswordChange = (event) => setPassword(event.target.value);
 
+    const handleSampleLogin = () => {
+        setEmail('sample@example.com');
+        setPassword('password');
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setLoading(true);
+        setMessage('Please wait. This may take a few seconds.');
 
         const payload = { email, password };
 
@@ -26,25 +33,25 @@ const Login = ({ onFlip, onLoginSuccess }) => {
                 const data = await response.json();
                 localStorage.setItem('authToken', data.token);
                 localStorage.setItem('user', JSON.stringify(data.user));
-                console.log('Login successful', data);
-                alert("Login successful");
-                
-                // Call onLoginSuccess to handle successful login and redirect
+                // alert("Login successful");
                 onLoginSuccess(data.token, data.user);
             } else {
                 const errorData = await response.json();
+                setMessage('Login failed, please try again.');
                 console.log('Login failed', errorData);
-                alert("Login failed, try again");
             }
         } catch (error) {
             console.error('Error logging in:', error);
+            setMessage('An error occurred. Please try again.');
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
         <div className="login-full-container">
             <section className="info-container">
-                <p>
+                <p className="p-info-login">
                     I'm a passionate web development student at Bow Valley College, set to graduate in May,
                     with a strong foundation in React, Node.js, MongoDB, and TypeScript. I'm also skilled in C# and .NET,
                     where I’ve worked on Windows application development using Object-Oriented Programming (OOP) principles.
@@ -85,9 +92,22 @@ const Login = ({ onFlip, onLoginSuccess }) => {
                             />
                         </div>
                         <div className="col-auto my-1">
-                            <button type="submit" className="btn btn-primary">Login</button>
+                            <button type="submit" className="btn btn-primary" disabled={loading}>
+                                {loading ? (
+                                    <>
+                                        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                        Logging in...
+                                    </>
+                                ) : (
+                                    'Login'
+                                )}
+                            </button>
                         </div>
                     </div>
+                    <button type="button" className="btn btn-secondary my-2" onClick={handleSampleLogin}>
+                        Use Sample Login
+                    </button>
+                    {message && <p className="login-message">{message}</p>}
                     <p>
                         Don’t have an account?{" "}
                         <span onClick={onFlip} className="signup-link">

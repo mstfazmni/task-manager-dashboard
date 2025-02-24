@@ -2,13 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .form-login-container, .info-container{
     flex: 1;
     margin-left: 10px;
     margin-right: 10px;
-    height: 50vh;
+    height: 70vh;
     
 }
 .form-login-container{
@@ -27,6 +27,7 @@
     display: flex;
     align-items: center;
     text-align: center;
+    overflow: hidden;
 }
 
 .info-container:hover, .form-login-container:hover{
@@ -42,4 +43,32 @@
 
 .signup-link:hover{
     color: rgb(95, 164, 233);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 480px) {
+    .login-full-container {
+        flex-direction: column; /* Stack login and info sections */
+    }
+
+    .info-container{
+        display: none;
+    }
+    .form-login-container,
+    .info-container {
+        width: 90%; 
+        margin: 10px auto; 
+    }
+    .form-row {
+        flex-direction: column; 
+    }
+
+    .col-sm-6,
+    .col-auto {
+        width: 100%; 
+    }
+
+    .input-group {
+        width: 100%;
+    }
 }

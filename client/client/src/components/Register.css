@@ -1,19 +1,16 @@
 .register-container{
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    /* height: 100vh; */
 }
 .form-register-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
     background-color: hwb(0 49% 48% / 0.081);
     padding: 20px;
     border-radius: 10px;
-    width: 50vw;
-    height: 75vh;
+    width: 50vw; 
+    height: 70vh; 
     transition: 500ms;
 
 }
@@ -27,4 +24,12 @@
 }
 .login-link:hover{
     color: rgb(95, 164, 233);
+}
+
+@media (max-width: 748px) {
+    .form-register-container{
+        width: 90vw; 
+        height: 70vh; 
+    }
+
 }
