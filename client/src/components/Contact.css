@@ -1,104 +1,233 @@
-.contact-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background-color: #fefefe;  */
-    padding: 30px 20px;
-    height: 100vh; /* Ensure full viewport height */
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 
-.contact-container {
-    background-color: #fff; /* White background to match header */
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.555);
-    padding: 40px;
-    max-width: 700px;
-    width: 100%;
-    text-align: center;
-    animation: slideUp 1s ease-out;
-}
-
-h1 {
-    font-size: 2.8rem;
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-p {
-    font-size: 1.2rem;
-    color: #666;
-    margin: 10px 0;
-    line-height: 1.6;
-    font-family: 'Roboto', sans-serif;
-}
-
-.my-info-container {
+.contact-left-sec {
+    height: 80vh;
+    background-color: #ffffff; 
+    padding: 50px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin-top: 40px;
-    border-radius: 12px;
-    background-color: #f9f9f9; /* Light gray background for info container */
-    padding: 40px;
+    color: rgb(0, 0, 0); 
+}
+
+.h1-contact {
+    font-family: 'Oswald', sans-serif;
+    font-size: 75px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-bottom: -10px;
+    text-align: center;
+}
+
+.span-contact {
+    font-family: 'Yellowtail', cursive;
+    font-size: 60px;
+    color: rgb(0, 0, 0);
+    margin-top: -20px;
+    text-align: center;
+}
+
+.left-sec-inside-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-container {
+    display: flex;
+    gap: 15px;
+}
+input{
     width: 100%;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
 }
 
-.my-info-container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+input,
+textarea {
+    padding: 12px;
+    background: transparent;
+    border: 1px solid rgb(112, 112, 112);
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease-in-out;
 }
 
-.my-info-container p {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 12px;
+textarea {
+    height: 120px; 
+    resize: none; 
 }
 
-.my-info-container a {
+input::placeholder,
+textarea::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+input:focus,
+textarea:focus {
+    border-color: #d7d7d7;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.action-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.submit-btn {
+    padding: 20px;
+    border: 1px solid rgb(112, 112, 112);
+    background: transparent;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 50%;
+}
+
+.submit-btn:hover {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+/* =================================right section styling================================= */
+
+
+.logos-email-container {
+    display: flex;
+    flex-direction: column; 
+}
+
+.logos-div{
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.git-logo, .linked-logo {
+    width: 30px;
+    cursor: pointer;
+    transition: width 0.3s ease-in-out; 
+}
+
+.git-logo:hover, .linked-logo:hover {
+    transform: scale(1.1); 
+}
+
+.email-div{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    color: #000000b6;
+    
+}
+.email-div p {
+    font-size: 16px;
+}
+.email-div a {
+    color: #050505b6;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.email-div a:hover {
     text-decoration: none;
-    color: #007bff;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease;
-    margin-top: 10px;
 }
 
-.my-info-container a:hover {
-    color: #0056b3;
-    transform: translateY(-3px);
+/*============================ Media Queries for responsiveness======================= */
+
+@media (max-width: 1024px) {
+    .contact-wrapper {
+        flex-direction: column; 
+    }
+
+    .contact-left-sec, .contact-right-sec {
+        flex: 1; 
+    }
+
+    .contact-right-sec {
+        display: none; 
+    }
+
+    .h1-contact {
+        font-size: 60px; 
+    }
+
+    .span-contact {
+        font-size: 50px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
-    .contact-container {
-        padding: 25px;
+    .h1-contact {
+        font-size: 50px; 
     }
 
-    h1 {
-        font-size: 2.2rem;
+    .span-contact {
+        font-size: 40px;
     }
 
-    p {
-        font-size: 1rem;
+    .contact-left-sec {
+        padding: 20px;
     }
 
-    .my-info-container {
-        padding: 30px;
+    .contact-wrapper {
+        padding: 20px;
+    }
+
+    .input-container {
+        gap: 10px;
+    }
+
+    .submit-btn {
+        width: 100%;
     }
 }
 
-@keyframes slideUp {
-    0% {
-        transform: translateY(30px);
-        opacity: 0;
+@media (max-width: 480px) {
+    .h1-contact {
+        font-size: 40px; 
     }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
+
+    .span-contact {
+        font-size: 35px;
+    }
+
+    .contact-left-sec {
+        padding: 15px;
+    }
+
+    .contact-wrapper {
+        padding: 15px;
+    }
+
+    .input-container {
+        gap: 8px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+
+    .logos-email-container {
+        position: static; 
+        align-items: center;
+    }
+
+    .email-div {
+        text-align: center;
+    }
+
+    .git-logo,
+    .linked-logo {
+        width: 25px; 
     }
 }
