@@ -510,7 +510,7 @@ const Dashboard = () => {
                          {/* show tasks for the selected date */}
                         {/* *********************Calender********************* */}
                         <div className="progress-controls">
-                            <input type="text" placeholder="Search a Task..." className="search-input"/>
+                            {/* <input type="text" placeholder="Search a Task..." className="search-input"/> */}
                             <button className="add-new-task-button" onClick={handleFormToggle}>Add New Task</button>
                         </div>
                     </div>

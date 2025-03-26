@@ -8,7 +8,7 @@ const About = () => {
             <div className="full-about-container">
                 <h1 className="h1-div">ABOUT ME</h1>
                 <div className="about-container">
-                    <img src={myPicture} alt="me" className="me-img-class"/>
+                    
                     <p className="p-info">
                         I'm a passionate web development student at Bow Valley College, set to graduate in May,
                         with a strong foundation in React, Node.js, MongoDB, and TypeScript. I'm also skilled in C# and .NET,
