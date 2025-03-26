@@ -10,7 +10,7 @@
 .left-menu {
     flex: 1;
     border: 2px solid rgb(220, 220, 220);
-    padding: 15px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -23,53 +23,39 @@
     border: none;
     padding: 8px 15px;
     border-radius: 6px;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: block;
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 22px;
+    /* margin-bottom: 15px; */
+    /* font-weight: bold; */
+    font-size: 16px;
 }
 .profile-option, .contact-option, .about-option{
     cursor: pointer;
 }
 .menu-span:hover {
-    background-color: #cfcfcf; 
+    /* background-color: #cfcfcf;  */
     transform: translateY(-2px);
-}
-
-/* Hide dropdown menu by default */
-.slides {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out;
-    width: 100%;
-}
-
-/* Show dropdown menu when checkbox is checked */
-#touchs:checked ~ .slides {
-    max-height: 200px; 
 }
 
 /* Dropdown list items */
 .slides li {
-    padding: 10px 20px;
-    font-size: 16px;
+    /* padding: 5px 10px; */
+    color: #333;
+    list-style:none;
+}
+.slides li p {
+    /* padding: 5px 10px; */
+    font-size: 14px;
     color: #333;
 }
 
 /* Hover effect for list items */
 .slides li:hover {
-    background-color: #e2e7eb;
+    /* background-color: #e2e7eb; */
+    text-decoration: underline;
 }
 
-/* Checkbox input styling */
-.checkbox {
-    display: none; /* Hide checkbox itself */
-}
 
 /* ======================================================================== */
 
@@ -81,35 +67,30 @@
     border: none;
     padding: 8px 15px;
     border-radius: 6px;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 22px;
+    /* margin-bottom: 15px; */
+    /* font-weight: bold; */
+    font-size: 16px;
 }
 .project-span:hover{
-    background-color: #bababa; 
+    /* background-color: #bababa;  */
     transform: translateY(-2px);
 }
 
 /* Style for the dropdown list */
 /* ======================================================== */
-.slide {
-    clear: both;
-    width: 100%;
-    height: 0; 
-    overflow: hidden; 
-    transition: height 0.4s ease;
-    list-style: none;
-    padding: 10px;
-    max-height: 60vh; 
-}
 
-/* Only set overflow-y to auto when expanded */
-#touch:checked ~ .slide {
-    height: 60vh; 
+.slide {
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+    gap: 5px; /* Adjusts the space between columns */
+    list-style: none;
     overflow-y: auto;
+    /* max-height: 60vh; */
 }
 
 /* Scrollbar styling */
@@ -127,19 +108,11 @@
     border-radius: 10px; 
 }
 
-/* Hide the checkbox visually but keep it functional */
-#touch {
-    position: absolute;
-    opacity: 0;
-    height: 0;
-}
-
-
 /* ======================================================== */
 .li-project-div {
-    background-color: #f4f4f4; 
-    padding: 15px 20px;
-    margin-bottom: 5px;
+    /* background-color: #f4f4f4;  */
+    /* padding: 15px 20px; */
+    /* margin-bottom: 3px; */
     border: 1px solid #ddd; 
     border-radius: 8px; 
     transition: all 0.3s ease; 
@@ -147,24 +120,26 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
+    padding: 5px;
 }
 
 .li-project-div:hover {
-    background-color: #d2d2d2; 
+    /* background-color: #d2d2d2;  */
+    /* text-decoration: underline; */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
     transform: translateY(-2px); 
 }
 
 .li-project-div a {
-    color: #02172c;
-    font-size: 16px;
+    color: #000000;
+    font-size: 12px;
     text-decoration: none;
     transition: color 0.3s ease; 
 }
 
 .li-project-div a:hover {
-    color: rgb(87, 87, 87);
+    color: rgb(45, 45, 45);
+    text-decoration: underline;
 }
 .slide li {
     padding: 5px;
@@ -172,9 +147,8 @@
 
 /* Buttons styling */
 .delete-btn, .edit-btn {
-    /* margin-right: 3px; */
-    color: white;
-    border: none;
+    color: black; /* Change text color to black for better contrast */
+    border: 1px solid #ddd; /* Subtle border */
     cursor: pointer;
     border-radius: 4px;
     font-size: 0.8em;
@@ -182,42 +156,47 @@
     width: 100%;
     padding: 3px 7px;
     margin-bottom: 3px;
+    background-color: #f0f0f0; /* Neutral background color */
 }
-.btn-control{
+
+/* Button container styling */
+.btn-control {
     display: flex;
     flex-direction: column;
 }
-.delete-btn{
-    background-color: #cc3636;
+
+/* Delete button*/
+.delete-btn {
+    background-color: #e0e0e0;
 }
+
 .delete-btn:hover {
-    background-color: #ad2f2f;
+    background-color: #d0d0d0; 
 }
 
-.edit-btn{
-    background-color: #3681cc;
+/* Edit button (neutral style) */
+.edit-btn {
+    background-color: #c0c0c0; 
 }
-
 
 .edit-btn:hover {
-    background-color: #2f6dac;
+    background-color: #b0b0b0; 
 }
-
 
 /* add new project button */
 .add-new-project-button{
-    background-color: #3681cc;
-    color: white;
+    background-color: #ebebeb;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
     transition: ease 200ms;
     width: 100%;
-    margin: 10px 0px;
+    /* margin: 10px 0px; */
 }
 .add-new-project-button:hover{
-    background-color: #2e6dad;
+    background-color: rgb(207, 207, 207);
     transform: translateY(-2px);
 }
 /* add new project and edit project form */

@@ -322,10 +322,10 @@ const Dashboard = () => {
             {/* Left-menu */}
             <section className="left-menu">
                 {/* Main Menu Section */}
-                <label htmlFor="touchs">
+                {/* <label htmlFor="touchs"> */}
                     <span className="menu-span">Main Menu</span>
-                </label>
-                <input className="checkbox" id="touchs" type="checkbox"/>
+                {/* </label> */}
+                {/* <input className="checkbox" id="touchs" type="checkbox"/> */}
                 <ul className="slides">
                     <div>
                         <li className="profile-option"><p onClick={handleProfileClick}>Profile</p></li>
@@ -336,12 +336,13 @@ const Dashboard = () => {
 
                 {/*  */}
                     <label htmlFor="touch"><span className="project-span">Projects</span></label>
-                    <input type="checkbox" id="touch"/>
+                    {/* <input type="checkbox" id="touch"/> */}
+                    <button className="add-new-project-button" onClick={toggleProjectPopup}><strong>+</strong> Create New</button>
+
                     <ul className="slide">
                         {/*==========================*/}
 
                          {/* Form for adding a new project */}
-                            <button className="add-new-project-button" onClick={toggleProjectPopup}><strong>+</strong> Create New</button>
                             {showProjectForm && (
                                 <div className="popup-overlay">
                                     <div className="popup-content">

@@ -34,7 +34,7 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 15%;
+    width: 20%;
 }
 .task-edit-btn{
     background-color: #3681cc;
