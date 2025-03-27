@@ -232,23 +232,31 @@ const Dashboard = () => {
         }));
     };
 
-    const handleAddProject = async (event) =>{
+    const handleAddProject = async (event) => {
         event.preventDefault();
         
-        try{
+        const projectData = { ...newProject }; // Ensure the data being sent is correct
+        setProjects((prevProjects) => [...prevProjects, projectData]); // Optimistic update
+   
+        try {
             const res = await axios.post('https://task-management-backend-ky4v.onrender.com/api/projects', newProject);
-            if (res.status === 201){
-                setProjects((prevProjects) => [...prevProjects, res.data]);
+            if (res.status === 201) {
                 alert("Project added successfully.");
                 toggleProjectPopup();
-                //reset form
-                setNewProject({ title: "", description: "", status: "Active"});
+                setNewProject({ title: "", description: "", status: "Active" }); // Reset form
+            } else {
+                // If project wasn't successfully added, rollback
+                setProjects(prevProjects => prevProjects.filter(p => p.title !== newProject.title));
+                alert("Failed to add the project.");
             }
         } catch (error) {
             console.error(error);
-            alert("Faild to add the project");
+            // Rollback if error occurs
+            setProjects(prevProjects => prevProjects.filter(p => p.title !== newProject.title));
+            alert("Failed to add the project");
         }
     };
+   
     // =====================================================================
 
     const toggleEditPopup = () => {
