@@ -8,6 +8,7 @@
 /* ================================================================== */
 /* Left menu styling */
 .left-menu {
+    /* background-color: #f3f3f3; */
     flex: 1;
     border: 2px solid rgb(220, 220, 220);
     padding: 5px;
@@ -83,6 +84,8 @@
 /* ======================================================== */
 
 .slide {
+    /* background-color: #c1c1c1; */
+    height: 45vh;
     width: 100%;
     padding: 10px;
     display: grid;
@@ -185,8 +188,8 @@
 
 /* add new project button */
 .add-new-project-button{
-    background-color: #ebebeb;
-    color: rgb(0, 0, 0);
+    background-color: #3681cc;
+    color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
@@ -196,7 +199,7 @@
     /* margin: 10px 0px; */
 }
 .add-new-project-button:hover{
-    background-color: rgb(207, 207, 207);
+    background-color: #2e6dad;
     transform: translateY(-2px);
 }
 /* add new project and edit project form */
@@ -283,6 +286,10 @@
     flex-direction: column;
 }
 .project-info-segment {
+    background-image: url('/src/asset/title-img.jpg');
+    background-size: cover; 
+    background-position:  center top; 
+    background-repeat: no-repeat; 
     padding: 20px;
     flex: 1;
     background-color: #f4f9fe;
