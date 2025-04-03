@@ -19,6 +19,23 @@
     margin-bottom: -10px;
     text-align: center;
 }
+.navigateBtn2{
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 200ms;
+    background-color: rgb(148, 148, 148);
+    color: white;
+    align-self: flex-start;
+    margin-top: auto; 
+    width: auto; 
+}
+.navigateBtn2:hover{
+    transform: translateY(-2px);
+    background-color: rgb(220, 220, 220);
+    color: rgb(148, 148, 148);
+}
 
 .span-contact {
     font-family: 'Yellowtail', cursive;

@@ -1,8 +1,16 @@
 import React from "react";
 import './About.css';
 import myPicture from '../asset/me-img.png';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
+
+    //Navigate button to main page
+        const navigate = useNavigate();
+        const handleNavigateDashboardClick = () => {
+            navigate('/dashboard');
+        }
+
     return (
         <div className="about-page">
             <div className="full-about-container">
@@ -19,6 +27,7 @@ const About = () => {
                         and continuously expanding my expertise in modern development tools and frameworks.
                     </p>
                 </div>
+                <button className="navigateBtn3" onClick={handleNavigateDashboardClick}>Back To Dashboard</button>
             </div>
         </div>
     );

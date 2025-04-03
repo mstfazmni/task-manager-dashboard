@@ -45,6 +45,23 @@
     font-family: 'Roboto', sans-serif;
     padding: 10px; 
 }
+.navigateBtn3{
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 200ms;
+    background-color: rgb(148, 148, 148);
+    color: white;
+    align-self: flex-start;
+    margin-top: auto; 
+    width: auto; 
+}
+.navigateBtn3:hover{
+    transform: translateY(-2px);
+    background-color: rgb(220, 220, 220);
+    color: rgb(148, 148, 148);
+}
 
 @media (max-width: 768px) {
     .full-about-container {

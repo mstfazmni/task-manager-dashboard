@@ -2,8 +2,18 @@ import React from "react";
 import './Contact.css';
 import gitLogo from '../asset/github.png';
 import linkedLogo from '../asset/linkedin.png';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Contact = () => {
+
+  //Navigate button to main page
+  const navigate = useNavigate();
+      const handleNavigateDashboardClick = () => {
+          navigate('/dashboard');
+      }
+
   return (
       <div className="contact-container">
         <div className="contact-wrapper">
@@ -20,6 +30,7 @@ const Contact = () => {
                 <div className="action-container">
                     <textarea placeholder="Write to me..."></textarea>
                     <button className="submit-btn">Submit</button>
+                    
                 </div>
                 
               </div>
@@ -37,7 +48,9 @@ const Contact = () => {
                     <p>You can also email me</p>
                     <a href="mailto:zmnimstfa@gmail.com">zmnimstfa@gmail.com</a>
                   </div>
+                  
               </div>
+              <button className="navigateBtn2" onClick={handleNavigateDashboardClick}>Back To Dashboard</button>
           </section>   
         </div>  
       </div>

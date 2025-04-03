@@ -30,7 +30,6 @@ const Profile = () => {
                 <p className="user-name-div">{userInfo ? `${userInfo.firstName} ${userInfo.lastName}` : 'Loading...'}</p>
                 <p className="user-job">Software Developer</p>
                 <button className="navigateBtn" onClick={handleNavigateDashboardClick}>Back To Dashboard</button>
-
             </section>
             {/* section 2 */}
             <section className="user-info-right">
