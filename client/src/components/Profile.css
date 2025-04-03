@@ -88,6 +88,21 @@ h2 {
     text-decoration: underline; 
 }
 
+.navigateBtn{
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 200ms;
+    background-color: rgb(148, 148, 148);
+    color: white;
+}
+.navigateBtn:hover{
+    transform: translateY(-2px);
+    background-color: rgb(220, 220, 220);
+    color: rgb(148, 148, 148);
+}
+
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     .profile-container {
